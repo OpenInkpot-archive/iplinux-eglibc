@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+export LC_ALL=C
+
+type=$1
+
+if [ "$1" = upgrade ]; then
+    # This will keep us from using hwcap libs (optimized) during an
+    # upgrade.
+    touch /etc/ld.so.nohwcap
+fi
+
+#DEBHELPER#
+
+exit 0

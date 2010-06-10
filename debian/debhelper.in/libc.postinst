@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+export LC_ALL=C
+
+if [ "$1" = "configure" ]; then
+    # Created in preinst
+    rm -f /etc/ld.so.nohwcap
+
+    # Add support for /etc/ld.so.conf.d
+    if [ -e /etc/ld.so.conf ]; then
+        [ -z "$(tail -n 1 /etc/ld.so.conf)" ] || echo >> /etc/ld.so.conf
+    else
+        touch /etc/ld.so.conf
+    fi
+    if ! grep -q '^include /etc/ld.so.conf.d/.*\.conf$' /etc/ld.so.conf ; then
+        echo 'include /etc/ld.so.conf.d/*.conf' >> /etc/ld.so.conf
+    fi
+fi
+
+#DEBHELPER#
+
+exit 0

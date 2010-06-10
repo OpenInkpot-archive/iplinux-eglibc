@@ -1,0 +1,2 @@
+debian/tmp-libc/usr/lib/locale-archive/* usr/lib/locale-archive
+debian/local/usr_sbin/genlocale usr/sbin

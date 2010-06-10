@@ -1,0 +1,11 @@
+debian/tmp-libc/lib/*.so* lib
+debian/tmp-libc/usr/bin/locale usr/bin
+debian/tmp-libc/usr/bin/localedef usr/bin
+
+debian/tmp-libc/sbin/ldconfig sbin
+debian/tmp-libc/usr/bin/getent usr/bin
+debian/tmp-libc/usr/bin/getconf usr/bin
+
+debian/tmp-libc/usr/lib/pt_chown usr/lib
+
+debian/tmp-libc/etc/ld.so.conf.d /etc
